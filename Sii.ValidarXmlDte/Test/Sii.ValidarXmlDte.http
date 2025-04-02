@@ -1,0 +1,231 @@
+### Validar DTE firmado
+POST http://localhost:5167/api/dte/validar
+Content-Type: application/xml; charset=iso-8859-1
+
+<?xml version="1.0" encoding="iso-8859-1"?>
+<FIRMADOS>
+  <DTE version="1.0" xmlns="http://www.sii.cl/SiiDte">
+    <Documento ID="D33F2178">
+      <Encabezado>
+        <IdDoc>
+          <TipoDTE>33</TipoDTE>
+          <Folio>2178</Folio>
+          <FchEmis>2024-11-28</FchEmis>
+          <TpoTranVenta>1</TpoTranVenta>
+          <FmaPago>2</FmaPago>
+          <TermPagoGlosa>CREDITO</TermPagoGlosa>
+          <FchVenc>2024-12-28</FchVenc>
+        </IdDoc>
+        <Emisor>
+          <RUTEmisor>76644248-9</RUTEmisor>
+          <RznSoc>EMISOR SPA</RznSoc>
+          <GiroEmis>GENERACION DE ENERGIA ELECTRICA</GiroEmis>
+          <Acteco>351019</Acteco>
+          <Acteco>351020</Acteco>
+          <DirOrigen>AV VITACURA 9 OF 1901</DirOrigen>
+          <CmnaOrigen>LAS CONDES</CmnaOrigen>
+          <CdgVendedor>1</CdgVendedor>
+        </Emisor>
+        <Receptor>
+          <RUTRecep>91806000-6</RUTRecep>
+          <CdgIntRecep>91806000</CdgIntRecep>
+          <RznSocRecep>ABASTIBLE S.A.</RznSocRecep>
+          <GiroRecep>GENERACION DE ENERGIA ELECTRICA EN OTRAS</GiroRecep>
+          <Contacto>8478865</Contacto>
+          <CorreoRecep>dte_abastible@goplicity.com</CorreoRecep>
+          <DirRecep>AVENIDA APOQUINDO N°5550, OFICINA 801-A, LAS CONDES 5550</DirRecep>
+          <CmnaRecep>Las Condes</CmnaRecep>
+        </Receptor>
+        <Totales>
+          <MntNeto>165031</MntNeto>
+          <TasaIVA>19</TasaIVA>
+          <IVA>31356</IVA>
+          <MntTotal>196387</MntTotal>
+        </Totales>
+      </Encabezado>
+      <Detalle>
+        <NroLinDet>1</NroLinDet>
+        <CdgItem>
+          <TpoCodigo>INT1</TpoCodigo>
+          <VlrCodigo>TEE_</VlrCodigo>
+        </CdgItem>
+        <NmbItem>Transferencias Económicas de Energía</NmbItem>
+        <QtyItem>1</QtyItem>
+        <UnmdItem>UN</UnmdItem>
+        <PrcItem>165031</PrcItem>
+        <MontoItem>165031</MontoItem>
+      </Detalle>
+      <TED version="1.0">
+        <DD>
+          <RE>76644248-9</RE>
+          <TD>33</TD>
+          <F>2178</F>
+          <FE>2024-11-28</FE>
+          <RR>91806000-6</RR>
+          <RSR>ABASTIBLE S.A.</RSR>
+          <MNT>196387</MNT>
+          <IT1>Transferencias Económicas de Energía</IT1>
+          <CAF version="1.0">
+            <DA>
+              <RE>76644248-9</RE>
+              <RS>EMISOR SPA</RS>
+              <TD>33</TD>
+              <RNG>
+                <D>2178</D>
+                <H>2293</H>
+              </RNG>
+              <FA>2024-11-28</FA>
+              <RSAPK>
+                <M>vYdrO76h+kZqfCSTBkvvoKrRgCEl5TBvcCbdoUuLeffkCbQgjD3zMLMbxJgU5ka9sezQBpdEH4/OhN9FKT6Lkw==</M>
+                <E>Aw==</E>
+              </RSAPK>
+              <IDK>300</IDK>
+            </DA>
+            <FRMA algoritmo="SHA1withRSA">fqxteyfA66RpQvzUfjNoElsAMZfKSs96ubzsNEz74NiMHnyQatPzdlhaG1pkhIcwAgckq1Fuvq+l1CGrQeTDgg==</FRMA>
+          </CAF>
+          <TSTED>2025-04-02T15:57:35</TSTED>
+        </DD>
+        <FRMT algoritmo="SHA1withRSA">lmEWSueerd+BUCcSwWbNrenLHrny+0u5HEjigwvLZhT/Ku6d/5uQEy3KwXPPNXOG/LUn1HBIi7MBEOqlSW+qMg==</FRMT>
+      </TED>
+      <TmstFirma>2025-04-02T15:57:35</TmstFirma>
+    </Documento>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo>
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+        <Reference URI="#D33F2178">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+          <DigestValue>y3t7/RToLo5gmxnvaTlWTFoLU/s=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>npqFGN8E77fC1eE3NiRDjZp8OZ9DhaPKc7RfDJYG9iZBFn4Q6Bw+E9HX9aDgsGeApVzqBYT/KA/JaZ0BfHU86/I0IIEZAhFWB21PfANx5eKbAMB/Oz+46S7W3+JFeg5GLe27yxyyDGMrfsVUaULBR0sYAv/hGEVY99+M+kZG2iFr7INKlWuSUGTuBhtDuSPUOeJiaDcwGEQPZY02sWyWDYLpswAQ/tELRGRER3oUcLkAKF7bmA0E571B7Z0VVJhghyyJLzJJOUhNfBhnlogJ84JVOWb2ij0k0u8SjEgrAQRfGCUzRvmaW+Ozbu3kIb34pMjuP3aJWlvRPaUbM6gAvA==</SignatureValue>
+      <KeyInfo>
+        <KeyValue>
+          <RSAKeyValue>
+            <Modulus>oGSK1bUcwZtf7hsJ60vTXVy/nEj1BGxWbVuEBSo7kzqBm4Q8f0o5rXo/YB7raoMoSMDX+W0XgQAe+XVKdowVHW6m/IwpNRQmUNNmzeeJPgp0O41STpYfmxX1GtnCZBMYnZmeWX0S6t2GwhxAder9cH1wAYyfl5yU7taLAKI6Cq56t37Ps7dHOZxeuEoXSWR9MN6xkbPufF6pn/EXaJJyXGF0gHvqeJOtUNz2WY4d9MpSxEfFCv8Fj1kWWxGsAxXcvLbZugiWy+u2J7hCBricI1TwXEQCQjhsa1bdU1m0TJ4uM9kW3Hrw+Ow4dvlDDBiVEifcoDDnrQd0RhQIAAeRtQ==</Modulus>
+            <Exponent>AQAB</Exponent>
+          </RSAKeyValue>
+        </KeyValue>
+        <X509Data>
+          <X509Certificate>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</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </DTE>
+  <DTE version="1.0" xmlns="http://www.sii.cl/SiiDte">
+    <Documento ID="D33F2179">
+      <Encabezado>
+        <IdDoc>
+          <TipoDTE>33</TipoDTE>
+          <Folio>2179</Folio>
+          <FchEmis>2024-11-28</FchEmis>
+          <TpoTranVenta>1</TpoTranVenta>
+          <FmaPago>2</FmaPago>
+          <TermPagoGlosa>CREDITO</TermPagoGlosa>
+          <FchVenc>2024-12-28</FchVenc>
+        </IdDoc>
+        <Emisor>
+          <RUTEmisor>76644248-9</RUTEmisor>
+          <RznSoc>EMISOR SPA</RznSoc>
+          <GiroEmis>GENERACION DE ENERGIA ELECTRICA</GiroEmis>
+          <Acteco>351019</Acteco>
+          <Acteco>351020</Acteco>
+          <DirOrigen>AV VITACURA 9 OF 1901</DirOrigen>
+          <CmnaOrigen>LAS CONDES</CmnaOrigen>
+          <CdgVendedor>1</CdgVendedor>
+        </Emisor>
+        <Receptor>
+          <RUTRecep>91806000-6</RUTRecep>
+          <CdgIntRecep>91806000</CdgIntRecep>
+          <RznSocRecep>ABASTIBLE S.A.</RznSocRecep>
+          <GiroRecep>GENERACION DE ENERGIA ELECTRICA EN OTRAS</GiroRecep>
+          <Contacto>8478865</Contacto>
+          <CorreoRecep>dte_abastible@goplicity.com</CorreoRecep>
+          <DirRecep>AVENIDA APOQUINDO N°5550, OFICINA 801-A, LAS CONDES 5550</DirRecep>
+          <CmnaRecep>Las Condes</CmnaRecep>
+        </Receptor>
+        <Totales>
+          <MntNeto>165031</MntNeto>
+          <TasaIVA>19</TasaIVA>
+          <IVA>31356</IVA>
+          <MntTotal>196387</MntTotal>
+        </Totales>
+      </Encabezado>
+      <Detalle>
+        <NroLinDet>1</NroLinDet>
+        <CdgItem>
+          <TpoCodigo>INT1</TpoCodigo>
+          <VlrCodigo>TEE_</VlrCodigo>
+        </CdgItem>
+        <NmbItem>Transferencias Económicas de Energía</NmbItem>
+        <QtyItem>1</QtyItem>
+        <UnmdItem>UN</UnmdItem>
+        <PrcItem>165031</PrcItem>
+        <MontoItem>165031</MontoItem>
+      </Detalle>
+      <TED version="1.0">
+        <DD>
+          <RE>76644248-9</RE>
+          <TD>33</TD>
+          <F>2179</F>
+          <FE>2024-11-28</FE>
+          <RR>91806000-6</RR>
+          <RSR>ABASTIBLE S.A.</RSR>
+          <MNT>196387</MNT>
+          <IT1>Transferencias Económicas de Energía</IT1>
+          <CAF version="1.0">
+            <DA>
+              <RE>76644248-9</RE>
+              <RS>EMISOR SPA</RS>
+              <TD>33</TD>
+              <RNG>
+                <D>2178</D>
+                <H>2293</H>
+              </RNG>
+              <FA>2024-11-28</FA>
+              <RSAPK>
+                <M>vYdrO76h+kZqfCSTBkvvoKrRgCEl5TBvcCbdoUuLeffkCbQgjD3zMLMbxJgU5ka9sezQBpdEH4/OhN9FKT6Lkw==</M>
+                <E>Aw==</E>
+              </RSAPK>
+              <IDK>300</IDK>
+            </DA>
+            <FRMA algoritmo="SHA1withRSA">fqxteyfA66RpQvzUfjNoElsAMZfKSs96ubzsNEz74NiMHnyQatPzdlhaG1pkhIcwAgckq1Fuvq+l1CGrQeTDgg==</FRMA>
+          </CAF>
+          <TSTED>2025-04-02T15:57:35</TSTED>
+        </DD>
+        <FRMT algoritmo="SHA1withRSA">h0QzD1PQ4tBOAoWDrnzYxcS30aMFo4cnlIe9jRtHhiBzR8XSPANz0tDL/PN8U/W5oSCSCOlr9pZ27X0S1BI82Q==</FRMT>
+      </TED>
+      <TmstFirma>2025-04-02T15:57:35</TmstFirma>
+    </Documento>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <SignedInfo>
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+        <Reference URI="#D33F2179">
+          <Transforms>
+            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+          </Transforms>
+          <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+          <DigestValue>13DOapYQTVPoBe5o5REgx8SPxIw=</DigestValue>
+        </Reference>
+      </SignedInfo>
+      <SignatureValue>LLqZsoYNtC51WOJ7CsyOWFeKe5JbFUlj/Eg04I4EHlFaxxouOwd8GGNOYnsDHsrrByPBzkV9aJWNr7ace6uyCguklh1i58VNmYOyK5HS8NKMXLAtsRmnvHwSXujvmT5IG63pjmI7Xok9GW9q/Dkh9U6CGSFf2THishTUgk+QxjxsqQ4DqHzcxWQZ1Vtc8YIfId6TBu7Ox9j+GxmDv7oXR6WO0Mg6KyYeqMSqOpqbi8y5Pe64duIOs+1LROUNkf+FBdrIhx+WRa9ZPk8DqjqH6EaUGBbmqcn2NJ1scrCPtmoIvwy6N5FZqKr3HcE6E4F7hcbzvXa0aOhByMuSF+3AtQ==</SignatureValue>
+      <KeyInfo>
+        <KeyValue>
+          <RSAKeyValue>
+            <Modulus>oGSK1bUcwZtf7hsJ60vTXVy/nEj1BGxWbVuEBSo7kzqBm4Q8f0o5rXo/YB7raoMoSMDX+W0XgQAe+XVKdowVHW6m/IwpNRQmUNNmzeeJPgp0O41STpYfmxX1GtnCZBMYnZmeWX0S6t2GwhxAder9cH1wAYyfl5yU7taLAKI6Cq56t37Ps7dHOZxeuEoXSWR9MN6xkbPufF6pn/EXaJJyXGF0gHvqeJOtUNz2WY4d9MpSxEfFCv8Fj1kWWxGsAxXcvLbZugiWy+u2J7hCBricI1TwXEQCQjhsa1bdU1m0TJ4uM9kW3Hrw+Ow4dvlDDBiVEifcoDDnrQd0RhQIAAeRtQ==</Modulus>
+            <Exponent>AQAB</Exponent>
+          </RSAKeyValue>
+        </KeyValue>
+        <X509Data>
+          <X509Certificate>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</X509Certificate>
+        </X509Data>
+      </KeyInfo>
+    </Signature>
+  </DTE>
+</FIRMADOS>
+
+###
